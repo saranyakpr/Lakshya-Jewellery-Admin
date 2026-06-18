@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.94), transparent 30%),
+    linear-gradient(180deg, #f5eef3 0%, #f4edf2 100%);
+  --app-bg: #f4edf2;
+  --panel-border: #e9dde6;
+  --brand-50: #f6e8f3;
+  --brand-100: #e8cae3;
+  --brand-300: #bf7fb2;
+  --brand-600: #852476;
+  --brand-700: #711768;
+  --brand-800: #5f1257;
+  --sidebar-top: #60195e;
+  --sidebar-bottom: #60195e;
+  --text-primary: #342534;
+  --text-muted: #9d8f99;
+  --gold-bg: #fff1d7;
+  --gold-text: #9f5f00;
+  --danger: #e53c3c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.94), transparent 30%),
+    linear-gradient(180deg, #f5eef3 0%, #f4edf2 100%);
+  color: var(--text-primary);
+}
+
+button,
+input {
+  font: inherit;
+}
