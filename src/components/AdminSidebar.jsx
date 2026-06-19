@@ -15,7 +15,7 @@ function SidebarItem({ item, isExpanded, onToggle, pathname, onNavigate }) {
     item.path && (pathname === item.path || pathname.startsWith(`${item.path}/`)),
   )
   const isActuallyExpanded = hasChildren && (isExpanded || isAnyChildActive)
-  const isHighlighted = isRouteActive || isAnyChildActive || isActuallyExpanded
+  const isHighlighted = isRouteActive || isAnyChildActive
   const itemClassName = `flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-[0.97rem] font-medium transition ${
     isHighlighted
       ? 'text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]'
@@ -123,6 +123,11 @@ function AdminSidebar({ isOpen, onClose }) {
     })
   }
 
+  function handleNavigate() {
+    setExpandedMenus((current) => Object.fromEntries(Object.keys(current).map((key) => [key, false])))
+    onClose()
+  }
+
   return (
     <>
       <div
@@ -168,7 +173,7 @@ function AdminSidebar({ isOpen, onClose }) {
                     isExpanded={Boolean(expandedMenus[item.label])}
                     onToggle={handleToggle}
                     pathname={location.pathname}
-                    onNavigate={onClose}
+                    onNavigate={handleNavigate}
                   />
                 ))}
               </div>

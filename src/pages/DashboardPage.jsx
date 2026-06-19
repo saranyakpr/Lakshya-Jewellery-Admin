@@ -1,6 +1,6 @@
 function DashboardPage() {
   return (
-    <section className='flex flex-col gap-4 rounded-[1.75rem] bg-white/45 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)] ring-1 ring-white/60 sm:p-5'>
+    <section className='flex flex-col'>
       <div className='flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between'>
         <div>
           <h1 className='text-[1.75rem] font-black tracking-[-0.03em] text-[var(--text-primary)]'>
@@ -27,7 +27,6 @@ function DashboardPage() {
         </div>
       </div>
 
-      <div className='min-h-[28rem] rounded-[1.5rem] border border-dashed border-[var(--panel-border)] bg-[linear-gradient(180deg,rgba(255,255,255,0.66),rgba(246,238,244,0.84))]'></div>
     </section>
   )
 }
