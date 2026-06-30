@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Navigate, Route, Routes } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import './App.css'
 import AdminHeader from './components/AdminHeader'
 import AdminSidebar from './components/AdminSidebar'
@@ -10,6 +10,16 @@ import MenuPage from './pages/MenuPage'
 import AllProductsPage from './pages/AllProductsPage'
 import AddProduct from './pages/AddProduct'
 
+function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  return null
+}
+
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
@@ -18,6 +28,7 @@ function App() {
       <AdminSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
 
       <div className='min-h-screen lg:pl-[16.25rem]'>
+        <ScrollToTop />
         <AdminHeader onMenuClick={() => setIsSidebarOpen(true)} />
 
         <main className='px-4 py-5 sm:px-6 lg:px-8'>
