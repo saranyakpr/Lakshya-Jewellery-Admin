@@ -7,6 +7,7 @@ import { menuRoutes } from './data/sidebarMenu'
 import CustomersPage from './pages/CustomersPage'
 import DashboardPage from './pages/DashboardPage'
 import MenuPage from './pages/MenuPage'
+import AllProductsPage from './pages/AllProductsPage'
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
@@ -23,8 +24,14 @@ function App() {
             <Route path='/' element={<Navigate to='/dashboard' replace />} />
             <Route path='/dashboard' element={<DashboardPage />} />
             <Route path='/customers' element={<CustomersPage />} />
+            <Route path='/products/all-products' element={<AllProductsPage />} />
             {menuRoutes
-              .filter((route) => route.path !== '/dashboard' && route.path !== '/customers')
+              .filter(
+                (route) =>
+                  route.path !== '/dashboard' &&
+                  route.path !== '/customers' &&
+                  route.path !== '/products/all-products',
+              )
               .map((route) => (
                 <Route
                   key={route.path}
