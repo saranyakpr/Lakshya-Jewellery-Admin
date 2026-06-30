@@ -1,4 +1,5 @@
 ﻿
+import { useNavigate } from 'react-router-dom'
 import { FaRegStar, FaRupeeSign, FaStar } from 'react-icons/fa'
 import {
   FiAlertTriangle,
@@ -167,7 +168,16 @@ const recentActivities = [
 ]
 
 const quickActions = [
-  { title: 'Add Product', description: 'Add new jewellery to store', button: '+ Add Product', icon: FiPlus, iconBg: 'bg-[#f4e8ff]', iconColor: 'text-[#7a1c73]', buttonClass: 'bg-[#7a1c73] hover:bg-[#66145f]' },
+  {
+    title: 'Add Product',
+    description: 'Add new jewellery to store',
+    button: '+ Add Product',
+    icon: FiPlus,
+    iconBg: 'bg-[#f4e8ff]',
+    iconColor: 'text-[#7a1c73]',
+    buttonClass: 'bg-[#7a1c73] hover:bg-[#66145f]',
+    to: '/products/add',
+  },
   { title: 'Create Order', description: 'Manually create a new order', button: '+ Create Order', icon: FiShoppingBag, iconBg: 'bg-[#e7f0ff]', iconColor: 'text-[#1f74e7]', buttonClass: 'bg-[#1f74e7] hover:bg-[#175ebc]' },
   { title: 'Create Coupon', description: 'Generate discount coupons', button: '+ Create Coupon', icon: FiTag, iconBg: 'bg-[#fff3dd]', iconColor: 'text-[#db6b00]', buttonClass: 'bg-[#d86100] hover:bg-[#b85400]' },
   { title: 'Add Customer', description: 'Register a new customer profile', button: '+ Add Customer', icon: FiUserPlus, iconBg: 'bg-[#dffbf0]', iconColor: 'text-[#0ca46d]', buttonClass: 'bg-[#0ca46d] hover:bg-[#098355]' },
@@ -632,6 +642,7 @@ function RecentActivitiesCard() {
 }
 
 function QuickActionCard({ item }) {
+  const navigate = useNavigate()
   const Icon = item.icon
 
   return (
@@ -641,7 +652,11 @@ function QuickActionCard({ item }) {
       </div>
       <h3 className='mt-4 text-[0.95rem] font-extrabold text-[#2e2531]'>{item.title}</h3>
       <p className='mt-2 text-[0.78rem] font-medium text-[#a295a1]'>{item.description}</p>
-      <button className={`mt-4 w-full rounded-xl px-4 py-2.5 text-[0.86rem] font-bold text-white transition ${item.buttonClass}`}>
+      <button
+        type='button'
+        onClick={() => item.to && navigate(item.to)}
+        className={`mt-4 w-full rounded-xl px-4 py-2.5 text-[0.86rem] font-bold text-white transition ${item.buttonClass}`}
+      >
         {item.button}
       </button>
     </div>

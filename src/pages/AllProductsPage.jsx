@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { FiEdit3, FiEye, FiPlus, FiSearch, FiTrash2 } from 'react-icons/fi'
 import PageLayout from '../components/PageLayout'
 import diamond from '../assets/Frame.png'
@@ -72,19 +73,25 @@ const products = [
 ]
 
 function AllProductsPage() {
+  const navigate = useNavigate()
+
   return (
     <PageLayout
       title='Product List'
       description='1,284 products in your catalogue'
       actions={
         <>
-          <button className='rounded-xl border border-[#e9d8f0] bg-white px-4 py-2 text-sm font-semibold text-[#5f4b6e] shadow-sm transition hover:border-[#d7bfdc] hover:bg-[#fbf2ff]'>
+          <button className='rounded-xl border border-[#e9d8f0] bg-white px-4 py-2 text-sm font-semibold text-[#5f4b6e] shadow-sm transition hover:border-[#d7bfdc] hover:bg-[#fbf2ff] cursor-pointer'>
             Bulk Actions
           </button>
-          <button className='rounded-xl border border-[#e9d8f0] bg-white px-4 py-2 text-sm font-semibold text-[#5f4b6e] shadow-sm transition hover:border-[#d7bfdc] hover:bg-[#fbf2ff]'>
+          <button className='rounded-xl border border-[#e9d8f0] bg-white px-4 py-2 text-sm font-semibold text-[#5f4b6e] shadow-sm transition hover:border-[#d7bfdc] hover:bg-[#fbf2ff] cursor-pointer'>
             Export
           </button>
-          <button className='inline-flex items-center gap-2 rounded-xl bg-[var(--brand-700)] px-4 py-2 text-sm font-semibold text-white shadow-[0_16px_30px_rgba(114,23,104,0.22)] transition hover:bg-[var(--brand-800)]'>
+          <button
+            type='button'
+            onClick={() => navigate('/products/add')}
+            className='inline-flex items-center gap-2 cursor-pointer rounded-xl bg-gradient-to-r from-[#7c21a0] via-[#9038c5] to-[#bc5eff] px-5 py-3 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(124,33,160,0.24)] transition hover:shadow-[0_22px_48px_rgba(124,33,160,0.28)] hover:from-[#8d33b5] hover:via-[#a947de] hover:to-[#c860ff]'
+          >
             <FiPlus className='h-4 w-4' />
             Add Product
           </button>
