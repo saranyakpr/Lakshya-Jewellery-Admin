@@ -270,9 +270,9 @@ function AdminHeader({ onMenuClick }) {
 
                   <button
                     type='button'
-                    className='flex w-full items-center gap-2.5 border-t border-[#f2eaed] px-4 py-2.5 text-left text-[0.97rem] text-[#ea4239] transition hover:bg-[#fff5f4]'
+                    className='flex w-full items-center gap-2.5 border-t border-[#f2eaed] px-4 py-2.5 text-left text-[0.97rem] transition hover:bg-[#fff5f4]'
                   >
-                    <AppIcon name='logout' className='h-4 w-4 text-[#ea4239]' />
+                    <AppIcon name='logout' className='h-4 w-4' />
                     <span>Logout</span>
                   </button>
                 </div>
