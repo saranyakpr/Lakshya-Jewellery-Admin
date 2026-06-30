@@ -225,7 +225,7 @@ function AdminHeader({ onMenuClick }) {
             <button
               type='button'
               onClick={handleProfileToggle}
-              className={`flex min-h-10 items-center gap-3 rounded-xl border px-3.5 py-1.5 shadow-sm transition ${
+              className={`flex min-h-10 items-center gap-3 rounded-xl border px-3.5 py-1.5 shadow-sm transition cursor-pointer ${
                 isProfileOpen
                   ? 'border-[#eadde4] bg-white'
                   : 'border-[#ece1e7] bg-[#f8f3f6] hover:border-[#d9becd]'
@@ -234,9 +234,9 @@ function AdminHeader({ onMenuClick }) {
               aria-expanded={isProfileOpen}
             >
               <div className='flex h-7 w-7 items-center justify-center rounded-full bg-[#f2cf7d] text-[0.72rem] font-bold text-[#7d5805]'>
-                S
+                A
               </div>
-              <span className='text-sm font-semibold text-[var(--text-primary)]'>Sri</span>
+              <span className='text-sm font-semibold text-[var(--text-primary)]'>Admin</span>
               <span
                 className={`ml-1 text-[#7f7179] transition ${isProfileOpen ? 'rotate-180' : ''}`}
               >
@@ -245,9 +245,9 @@ function AdminHeader({ onMenuClick }) {
             </button>
 
             {isProfileOpen ? (
-              <div className='absolute right-0 top-[calc(100%+0.5rem)] z-30 w-[15rem] overflow-hidden rounded-2xl border border-[#eee4e8] bg-white shadow-[0_20px_42px_rgba(58,35,45,0.18)]'>
+              <div className='absolute right-0 top-[calc(100%+0.5rem)] z-30 w-[15rem] overflow-hidden rounded-2xl border border-[#eee4e8] bg-white shadow-[0_20px_42px_rgba(58,35,45,0.18)] cursor-pointer'>
                 <div className='border-b border-[#f0e6ea] px-4 py-3.5'>
-                  <p className='text-[0.98rem] font-semibold text-[#2f2430]'>Sri</p>
+                  <p className='text-[0.98rem] font-semibold text-[#2f2430]'>Admin</p>
                   <p className='text-sm text-[#ab9ca4]'>Super Admin</p>
                 </div>
 
