@@ -184,7 +184,7 @@ const quickActions = [
 ]
 
 function SectionTitle({ children }) {
-  return <h2 className='text-[1.05rem] font-extrabold sm:text-[1.08rem] text-[var(--text-primary)]'>{children}</h2>
+  return <h2 className='text-[1.05rem] font-bold sm:text-[1.08rem] text-[var(--text-primary)]'>{children}</h2>
 }
 
 function SplitSection({ title, children }) {
@@ -249,7 +249,7 @@ function ChartCard({ title, subtitle, action, children, legend }) {
     <div className={`${surfaceClass} p-4`}>
       <div className='flex flex-wrap items-start justify-between gap-3'>
         <div>
-          <h3 className='text-[0.98rem] font-extrabold text-[#2e2531]'>{title}</h3>
+          <h3 className='text-[0.98rem] font-bold text-[#2e2531]'>{title}</h3>
           <p className='mt-0.5 text-[0.78rem] font-medium text-[#a295a1]'>{subtitle}</p>
         </div>
         <div className='flex items-center gap-3'>
@@ -343,7 +343,7 @@ function CategorySalesCard() {
   return (
     <div className={`${surfaceClass} p-4`}>
       <div>
-        <h3 className='text-[0.98rem] font-extrabold text-[#2e2531]'>Category Wise Sales</h3>
+        <h3 className='text-[0.98rem] font-bold text-[#2e2531]'>Category Wise Sales</h3>
         <p className='mt-0.5 text-[0.78rem] font-medium text-[#a295a1]'>Revenue split by product category</p>
       </div>
 
@@ -384,7 +384,7 @@ function TopSellingProductsCard() {
   return (
     <div className={`${surfaceClass} p-4`}>
       <div className='flex items-center justify-between gap-3'>
-        <h3 className='text-[0.98rem] font-extrabold text-[#2e2531]'>Top Selling Products</h3>
+        <h3 className='text-[0.98rem] font-bold text-[#2e2531]'>Top Selling Products</h3>
         <button className='flex items-center gap-1 text-[0.76rem] font-bold text-[#8c2b79]'>
           View All
           <FiChevronRight className='h-3.5 w-3.5' />
@@ -416,7 +416,7 @@ function CustomerGrowthCard() {
     <div className={`${surfaceClass} p-4`}>
       <div className='flex items-start justify-between gap-3'>
         <div>
-          <h3 className='text-[0.98rem] font-extrabold text-[#2e2531]'>Customer Growth</h3>
+          <h3 className='text-[0.98rem] font-bold text-[#2e2531]'>Customer Growth</h3>
           <p className='mt-0.5 text-[0.78rem] font-medium text-[#a295a1]'>New vs returning customers per month</p>
         </div>
         <span className='rounded-full bg-[#dcfbef] px-3 py-1 text-[0.72rem] font-bold text-[#0ca46d]'>
@@ -472,7 +472,7 @@ function RecentOrdersCard() {
   return (
     <div className={`${surfaceClass} p-4`}>
       <div className='flex items-center justify-between gap-3'>
-        <h3 className='text-[0.98rem] font-extrabold text-[#2e2531]'>Recent Orders</h3>
+        <h3 className='text-[0.98rem] font-bold text-[#2e2531]'>Recent Orders</h3>
         <button className='flex items-center gap-1 text-[0.76rem] font-bold text-[#8c2b79]'>
           View All
           <FiChevronRight className='h-3.5 w-3.5' />
@@ -508,7 +508,7 @@ function RecentCustomersCard() {
   return (
     <div className={`${surfaceClass} p-4`}>
       <div className='flex items-center justify-between gap-3'>
-        <h3 className='text-[0.98rem] font-extrabold text-[#2e2531]'>Recent Customers</h3>
+        <h3 className='text-[0.98rem] font-bold text-[#2e2531]'>Recent Customers</h3>
         <button className='flex items-center gap-1 text-[0.76rem] font-bold text-[#8c2b79]'>
           View All
           <FiChevronRight className='h-3.5 w-3.5' />
@@ -542,7 +542,7 @@ function InventoryCard() {
   return (
     <div className={`${surfaceClass} p-4`}>
       <div className='flex flex-wrap items-center gap-2'>
-        <h3 className='text-[0.98rem] font-extrabold text-[#2e2531]'>Inventory</h3>
+        <h3 className='text-[0.98rem] font-bold text-[#2e2531]'>Inventory</h3>
         <span className='rounded-full bg-[#ffe8e6] px-2.5 py-0.5 text-[0.62rem] font-semibold text-[#ff695a]'>
           68 items need attention
         </span>
@@ -574,7 +574,7 @@ function LatestReviewsCard() {
   return (
     <div className={`${surfaceClass} p-4`}>
       <div className='flex flex-wrap items-center justify-between gap-2'>
-        <h3 className='text-[0.98rem] font-extrabold text-[#2e2531]'>Latest Reviews</h3>
+        <h3 className='text-[0.98rem] font-bold text-[#2e2531]'>Latest Reviews</h3>
         <div className='flex items-center gap-1 text-[0.68rem] text-[#a295a1]'>
           <div className='flex items-center gap-0.5 text-[#f4c96f]'>
             {Array.from({ length: 4 }).map((_, index) => (
@@ -617,7 +617,7 @@ function RecentActivitiesCard() {
   return (
     <div className={`${surfaceClass} p-4`}>
       <div className='flex items-center justify-between gap-3'>
-        <h3 className='text-[0.98rem] font-extrabold text-[#2e2531]'>Recent Activities</h3>
+        <h3 className='text-[0.98rem] font-bold text-[#2e2531]'>Recent Activities</h3>
         <span className='text-[0.68rem] text-[#b2a4ae]'>Today</span>
       </div>
 
@@ -650,12 +650,12 @@ function QuickActionCard({ item }) {
       <div className={`mx-auto flex h-10 w-10 items-center justify-center rounded-xl ${item.iconBg}`}>
         <Icon className={`h-5 w-5 ${item.iconColor}`} />
       </div>
-      <h3 className='mt-4 text-[0.95rem] font-extrabold text-[#2e2531]'>{item.title}</h3>
+      <h3 className='mt-4 text-[0.95rem] font-bold text-[#2e2531]'>{item.title}</h3>
       <p className='mt-2 text-[0.78rem] font-medium text-[#a295a1]'>{item.description}</p>
       <button
         type='button'
         onClick={() => item.to && navigate(item.to)}
-        className={`mt-4 w-full rounded-xl px-4 py-2.5 text-[0.86rem] font-bold text-white transition ${item.buttonClass}`}
+        className={`mt-4 w-full rounded-xl px-4 py-2.5 text-[0.86rem] font-bold text-white transition cursor-pointer ${item.buttonClass}`}
       >
         {item.button}
       </button>

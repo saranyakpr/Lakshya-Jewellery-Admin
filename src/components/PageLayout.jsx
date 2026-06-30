@@ -9,7 +9,7 @@ function PageLayout({ eyebrow, title, description, actions, children }) {
             </p>
           ) : null}
 
-          <h1 className={`${eyebrow ? 'mt-1' : ''} text-[1.75rem] font-black tracking-[-0.03em] text-[var(--text-primary)]`}>
+          <h1 className={`${eyebrow ? 'mt-1' : ''} text-[1.75rem] font-bold tracking-[-0.03em] text-[var(--text-primary)]`}>
             {title}
           </h1>
           <p className='mt-1 text-sm text-[var(--text-muted)]'>{description}</p>
