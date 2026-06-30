@@ -1,5 +1,6 @@
 import { FiEdit3, FiEye, FiPlus, FiSearch, FiTrash2 } from 'react-icons/fi'
 import PageLayout from '../components/PageLayout'
+import diamond from '../assets/Frame.png'
 
 const products = [
   {
@@ -73,18 +74,17 @@ const products = [
 function AllProductsPage() {
   return (
     <PageLayout
-      eyebrow='Products'
       title='Product List'
       description='1,284 products in your catalogue'
       actions={
         <>
-          <button className='rounded-full border border-[#e9d8f0] bg-white px-4 py-2 text-sm font-semibold text-[#5f4b6e] shadow-sm transition hover:border-[#d7bfdc] hover:bg-[#fbf2ff]'>
+          <button className='rounded-xl border border-[#e9d8f0] bg-white px-4 py-2 text-sm font-semibold text-[#5f4b6e] shadow-sm transition hover:border-[#d7bfdc] hover:bg-[#fbf2ff]'>
             Bulk Actions
           </button>
-          <button className='rounded-full border border-[#e9d8f0] bg-white px-4 py-2 text-sm font-semibold text-[#5f4b6e] shadow-sm transition hover:border-[#d7bfdc] hover:bg-[#fbf2ff]'>
+          <button className='rounded-xl border border-[#e9d8f0] bg-white px-4 py-2 text-sm font-semibold text-[#5f4b6e] shadow-sm transition hover:border-[#d7bfdc] hover:bg-[#fbf2ff]'>
             Export
           </button>
-          <button className='inline-flex items-center gap-2 rounded-full bg-[var(--brand-700)] px-4 py-2 text-sm font-semibold text-white shadow-[0_16px_30px_rgba(114,23,104,0.22)] transition hover:bg-[var(--brand-800)]'>
+          <button className='inline-flex items-center gap-2 rounded-xl bg-[var(--brand-700)] px-4 py-2 text-sm font-semibold text-white shadow-[0_16px_30px_rgba(114,23,104,0.22)] transition hover:bg-[var(--brand-800)]'>
             <FiPlus className='h-4 w-4' />
             Add Product
           </button>
@@ -93,7 +93,7 @@ function AllProductsPage() {
     >
       <div className='rounded-[2rem] border border-[#efe3ed] bg-white/80 p-5 shadow-[0_12px_35px_rgba(81,28,96,0.06)]'>
         <div className='mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between'>
-          <div className='flex flex-1 items-center gap-2 rounded-full border border-[#e9d8f0] bg-[#faf3fe] px-4 py-3 shadow-sm'>
+          <div className='flex flex-1 items-center gap-2 rounded-xl border border-[#e9d8f0] bg-[#faf3fe] px-4 py-3 shadow-sm'>
             <FiSearch className='h-4 w-4 text-[#8c529d]' />
             <input
               type='text'
@@ -108,7 +108,7 @@ function AllProductsPage() {
               <button
                 key={filter}
                 type='button'
-                className='rounded-full border border-[#e9d8f0] bg-white px-4 py-2 text-sm font-medium text-[#5f4b6e] transition hover:border-[#d7bfdc] hover:bg-[#faf2ff]'
+                className='rounded-xl border border-[#e9d8f0] bg-white px-4 py-2 text-sm font-medium text-[#5f4b6e] transition hover:border-[#d7bfdc] hover:bg-[#faf2ff]'
               >
                 {filter}
               </button>
@@ -120,37 +120,38 @@ function AllProductsPage() {
           <table className='min-w-full border-separate border-spacing-0 text-left'>
             <thead className='bg-[#fbf2ff] text-[0.82rem] uppercase tracking-[0.12em] text-[#755270]'>
               <tr>
-                <th className='px-4 py-4'>Image</th>
-                <th className='px-4 py-4'>SKU</th>
-                <th className='px-4 py-4'>Product Name</th>
-                <th className='px-4 py-4'>Category</th>
-                <th className='px-4 py-4'>Gold Wt.</th>
-                <th className='px-4 py-4'>Dia Wt.</th>
-                <th className='px-4 py-4'>Price</th>
-                <th className='px-4 py-4'>Stock</th>
-                <th className='px-4 py-4'>Status</th>
-                <th className='px-4 py-4'>Created</th>
-                <th className='px-4 py-4'>Actions</th>
+                <th className='px-3 py-3'>Image</th>
+                <th className='px-3 py-3'>SKU</th>
+                <th className='px-3 py-3'>Product Name</th>
+                <th className='px-3 py-3'>Category</th>
+                <th className='px-3 py-3'>Gold Wt.</th>
+                <th className='px-3 py-3'>Dia Wt.</th>
+                <th className='px-3 py-3'>Price</th>
+                <th className='px-3 py-3'>Stock</th>
+                <th className='px-3 py-3'>Status</th>
+                <th className='px-3 py-3'>Created</th>
+                <th className='px-3 py-3'>Actions</th>
               </tr>
             </thead>
             <tbody>
               {products.map((product, index) => (
                 <tr key={product.id} className={index % 2 === 0 ? 'bg-white' : 'bg-[#fcf5ff]'}>
-                  <td className='border-t border-[#f1e5f2] px-4 py-4'>
-                    <div className='flex h-11 w-11 items-center justify-center rounded-2xl bg-[#f4e9f8] text-sm font-semibold text-[#7f4a8f]'>
-                      {product.id.slice(-2)}
+                  <td className='border-t border-[#f1e5f2] px-3 py-3'>
+                    <div className='flex h-10 w-10 items-center justify-center rounded-xl bg-[#f4e9f8] text-sm font-semibold text-[#7f4a8f]'>
+                      {/* {product.id.slice(-2)} */}
+                      <img src={diamond} alt='diamond'/>
                     </div>
                   </td>
-                  <td className='border-t border-[#f1e5f2] px-4 py-4 text-sm text-[#825a7b]'>{product.id}</td>
-                  <td className='border-t border-[#f1e5f2] px-4 py-4 text-sm font-semibold text-[#312533]'>{product.name}</td>
-                  <td className='border-t border-[#f1e5f2] px-4 py-4 text-sm text-[#6e5a6e]'>{product.category}</td>
-                  <td className='border-t border-[#f1e5f2] px-4 py-4 text-sm text-[#6e5a6e]'>{product.goldWt}</td>
-                  <td className='border-t border-[#f1e5f2] px-4 py-4 text-sm text-[#6e5a6e]'>{product.diaWt}</td>
-                  <td className='border-t border-[#f1e5f2] px-4 py-4 text-sm font-semibold text-[#312533]'>{product.price}</td>
-                  <td className='border-t border-[#f1e5f2] px-4 py-4 text-sm text-[#6e5a6e]'>{product.stock}</td>
-                  <td className='border-t border-[#f1e5f2] px-4 py-4'>
+                  <td className='border-t border-[#f1e5f2] px-3 py-3 text-sm text-[#825a7b]'>{product.id}</td>
+                  <td className='border-t border-[#f1e5f2] px-3 py-3 text-sm font-semibold text-[#312533]'>{product.name}</td>
+                  <td className='border-t border-[#f1e5f2] px-3 py-3 text-sm text-[#6e5a6e]'>{product.category}</td>
+                  <td className='border-t border-[#f1e5f2] px-3 py-3 text-sm text-[#6e5a6e]'>{product.goldWt}</td>
+                  <td className='border-t border-[#f1e5f2] px-3 py-3 text-sm text-[#6e5a6e]'>{product.diaWt}</td>
+                  <td className='border-t border-[#f1e5f2] px-3 py-3 text-sm font-semibold text-[#312533]'>{product.price}</td>
+                  <td className='border-t border-[#f1e5f2] px-3 py-3 text-sm text-[#6e5a6e]'>{product.stock}</td>
+                  <td className='border-t border-[#f1e5f2] px-3 py-3'>
                     <span
-                      className={`inline-flex rounded-full px-3 py-1 text-[0.72rem] font-semibold ${
+                      className={`inline-flex rounded-full px-2.5 py-1 text-[0.72rem] font-semibold ${
                         product.status === 'Active'
                           ? 'bg-[#dfe6ff] text-[#2745a3]'
                           : 'bg-[#f7e7ed] text-[#a0375d]'
@@ -159,16 +160,16 @@ function AllProductsPage() {
                       {product.status}
                     </span>
                   </td>
-                  <td className='border-t border-[#f1e5f2] px-4 py-4 text-sm text-[#6e5a6e]'>{product.created}</td>
-                  <td className='border-t border-[#f1e5f2] px-4 py-4 text-sm text-[#5f4b6e]'>
+                  <td className='border-t border-[#f1e5f2] px-3 py-3 text-sm text-[#6e5a6e]'>{product.created}</td>
+                  <td className='border-t border-[#f1e5f2] px-3 py-3 text-sm text-[#5f4b6e]'>
                     <div className='flex items-center gap-2'>
-                      <button type='button' className='inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#d9c6e9] bg-white text-[#6b4d7a] transition hover:bg-[#faf2ff]'>
+                      <button type='button' className='inline-flex h-8 w-8 items-center justify-center text-[#6b4d7a] transition hover:bg-[#faf2ff] cursor-pointer'>
                         <FiEye className='h-4 w-4' />
                       </button>
-                      <button type='button' className='inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#ead8f2] bg-white text-[#8d5e94] transition hover:bg-[#faf2ff]'>
+                      <button type='button' className='inline-flex h-8 w-8 items-center justify-center text-[#8d5e94] transition hover:bg-[#faf2ff] cursor-pointer'>
                         <FiEdit3 className='h-4 w-4' />
                       </button>
-                      <button type='button' className='inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#f1d7de] bg-white text-[#b03159] transition hover:bg-[#fff2f7]'>
+                      <button type='button' className='inline-flex h-8 w-8 items-center justify-center text-[#b03159] transition hover:bg-[#fff2f7] cursor-pointer'>
                         <FiTrash2 className='h-4 w-4' />
                       </button>
                     </div>
