@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { FaBell, FaRegStar } from 'react-icons/fa'
-import { FiAlertTriangle, FiRefreshCcw, FiShoppingCart, FiTrendingUp } from 'react-icons/fi'
+import { FiAlertTriangle, FiRefreshCcw, FiShoppingCart, FiTrendingUp, FiX } from 'react-icons/fi'
 import { IoMoonSharp } from 'react-icons/io5'
 import AppIcon from './AppIcon'
 
@@ -103,6 +104,7 @@ function NotificationItem({ title, time, icon: Icon, iconColor, iconBg, unread, 
 function AdminHeader({ onMenuClick }) {
   const [isProfileOpen, setIsProfileOpen] = useState(false)
   const [isNotificationOpen, setIsNotificationOpen] = useState(false)
+  const [isLogoutConfirmOpen, setIsLogoutConfirmOpen] = useState(false)
   const [notifications, setNotifications] = useState(initialNotifications)
   const profileMenuRef = useRef(null)
   const notificationMenuRef = useRef(null)
@@ -149,6 +151,58 @@ function AdminHeader({ onMenuClick }) {
   function handleMarkAllRead() {
     setNotifications((current) => current.map((item) => ({ ...item, unread: false, highlighted: false })))
   }
+
+  function handleLogoutClick() {
+    setIsProfileOpen(false)
+    setIsLogoutConfirmOpen(true)
+  }
+
+  function handleLogoutCancel() {
+    setIsLogoutConfirmOpen(false)
+  }
+
+  function handleLogoutConfirm() {
+    setIsLogoutConfirmOpen(false)
+    console.log('Logout confirmed')
+  }
+
+  const logoutModal = isLogoutConfirmOpen && typeof document !== 'undefined' ? createPortal(
+    <div className='fixed inset-0 z-[99999] flex items-center justify-center bg-black/40 px-4 py-8 backdrop-blur-sm'>
+      <div className='relative w-full max-w-[30rem] overflow-hidden rounded-[2.5rem] bg-white px-8 py-8 shadow-[0_24px_80px_rgba(45,16,71,0.18)]'>
+        <button
+          type='button'
+          onClick={handleLogoutCancel}
+          className='absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#ece1ef] bg-white text-[#5f4b6a] transition hover:bg-[#f8f0fb] hover:text-[#3a2543]'
+          aria-label='Close logout dialog'
+        >
+          <FiX className='h-4 w-4 cursor-pointer' />
+        </button>
+
+        <div className='space-y-4 text-center'>
+          <h2 className='text-[1.3rem] font-semibold text-[#2f2430]'>Confirm logout</h2>
+          <p className='mx-auto max-w-[21rem] text-sm leading-6 text-[#6d5862]'>Are you sure you want to log out? Your session will be closed.</p>
+        </div>
+
+        <div className='mt-8 flex flex-col gap-3 sm:flex-row justify-between'>
+          <button
+            type='button'
+            onClick={handleLogoutCancel}
+            className='min-w-[9rem] rounded-full border border-[#e9d7ef] bg-white px-6 py-3 text-sm font-semibold text-[var(--brand-700)] transition hover:border-[#d2b1d8] hover:bg-[#faf0ff] cursor-pointer'
+          >
+            Cancel
+          </button>
+          <button
+            type='button'
+            onClick={handleLogoutConfirm}
+            className='min-w-[9rem] rounded-full bg-[var(--brand-600)] px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(113,22,103,0.18)] transition hover:bg-[var(--brand-700)] cursor-pointer'
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+    </div>,
+    document.body,
+  ) : null
 
   return (
     <header className='sticky top-0 z-20 border-b border-white/70 bg-white/86 backdrop-blur-xl'>
@@ -251,10 +305,10 @@ function AdminHeader({ onMenuClick }) {
                   <p className='text-sm text-[#ab9ca4]'>Super Admin</p>
                 </div>
 
-                <div className='py-1.5'>
+                <div className='py-1.5 cursor-pointer'>
                   <button
                     type='button'
-                    className='flex w-full items-center gap-2.5 px-4 py-2.5 text-left text-[0.97rem] text-[#5c4b54] transition hover:bg-[#faf6f8]'
+                    className='flex w-full items-center gap-2.5 px-4 py-2.5 text-left text-[0.97rem] text-[#5c4b54] transition-colors duration-150 cursor-pointer hover:bg-[#faf6f8] hover:text-[var(--brand-700)]'
                   >
                     <AppIcon name='profile' className='h-4 w-4 text-[#5d97bf]' />
                     <span>My Profile</span>
@@ -262,7 +316,7 @@ function AdminHeader({ onMenuClick }) {
 
                   <button
                     type='button'
-                    className='flex w-full items-center gap-2.5 border-t border-[#f2eaed] px-4 py-2.5 text-left text-[0.97rem] text-[#5c4b54] transition hover:bg-[#faf6f8]'
+                    className='flex w-full items-center gap-2.5 border-t cursor-pointer border-[#f2eaed] px-4 py-2.5 text-left text-[0.97rem] text-[#5c4b54] transition-colors duration-150 hover:bg-[#faf6f8] hover:text-[var(--brand-700)]'
                   >
                     <AppIcon name='settings' className='h-4 w-4 text-[#7f7a7d]' />
                     <span>Settings</span>
@@ -270,7 +324,8 @@ function AdminHeader({ onMenuClick }) {
 
                   <button
                     type='button'
-                    className='flex w-full items-center gap-2.5 border-t border-[#f2eaed] px-4 py-2.5 text-left text-[0.97rem] transition hover:bg-[#fff5f4]'
+                    onClick={handleLogoutClick}
+                    className='flex w-full items-center gap-2.5 cursor-pointer border-t border-[#f2eaed] px-4 py-2.5 text-left text-[0.97rem] text-[#5c4b54] transition-colors duration-150 hover:bg-[#faf6f8] hover:text-[var(--brand-700)]'
                   >
                     <AppIcon name='logout' className='h-4 w-4' />
                     <span>Logout</span>
@@ -281,6 +336,8 @@ function AdminHeader({ onMenuClick }) {
           </div>
         </div>
       </div>
+
+      {logoutModal}
     </header>
   )
 }
