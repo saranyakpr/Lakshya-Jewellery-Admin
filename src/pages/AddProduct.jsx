@@ -50,7 +50,7 @@ function AddProduct() {
                 <input
                   type='text'
                   placeholder='diamond-solitaire-ring-18k'
-                  className='w-full rounded-2xl border border-[#e8dfe8] bg-[#f8f1ff] px-4 py-3 text-sm text-[#9f8aa8] outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff]'
+                  className='w-full rounded-lg border border-[#e8dfe8] bg-[#f8f1ff] px-4 py-3 text-sm text-[#9f8aa8] outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff]'
                 />
               </label>
               <div className='sm:col-span-2'>
@@ -59,7 +59,7 @@ function AddProduct() {
                   <textarea
                     rows='4'
                     placeholder='Enter full product description here...'
-                    className='w-full rounded-[1.5rem] border border-[#e8dfe8] bg-[#fbf4ff] px-4 py-4 text-sm text-[#312533] outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff]'
+                    className='w-full rounded-lg border border-[#e8dfe8] bg-[#fbf4ff] px-4 py-4 text-sm text-[#312533] outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff]'
                   />
                 </label>
               </div>
@@ -167,7 +167,7 @@ function AddProduct() {
             </div>
 
             <div className='mt-5 grid gap-4'>
-              <div className='rounded-3xl bg-[#faf2ff] p-4 text-sm font-semibold text-[#7d3c98] shadow-[inset_0_1px_0_rgba(118,83,138,0.08)]'>
+              <div className='rounded-lg bg-[#faf2ff] p-4 text-sm font-semibold text-[#7d3c98] shadow-[inset_0_1px_0_rgba(118,83,138,0.08)]'>
                 ₹6,842 / gram
               </div>
               <label className='space-y-2 text-sm font-medium text-[#5a4b63]'>
@@ -175,12 +175,12 @@ function AddProduct() {
                 <input
                   type='text'
                   placeholder='18,500'
-                  className='w-full rounded-2xl border border-[#e8dfe8] bg-white px-4 py-3 text-sm text-[#312533] outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff]'
+                  className='w-full rounded-lg border border-[#e8dfe8] bg-white px-4 py-3 text-sm text-[#312533] outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff]'
                 />
               </label>
               <label className='space-y-2 text-sm font-medium text-[#5a4b63]'>
                 GST (%)
-                <select className='w-full rounded-2xl border border-[#e8dfe8] bg-white px-4 py-3 text-sm text-[#312533] outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff]'>
+                <select className='w-full rounded-lg border border-[#e8dfe8] bg-white px-4 py-3 text-sm text-[#312533] outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff]'>
                   <option>3%</option>
                   <option>5%</option>
                   <option>12%</option>
@@ -191,7 +191,7 @@ function AddProduct() {
                 <input
                   type='text'
                   placeholder='₹1,82,000'
-                  className='w-full rounded-2xl border border-[#e8dfe8] bg-[#faf4ff] px-4 py-3 text-sm font-semibold text-[#39243e] outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff]'
+                  className='w-full rounded-lg border border-[#e8dfe8] bg-[#faf4ff] px-4 py-3 text-sm font-semibold text-[#39243e] outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff]'
                 />
               </label>
               <label className='space-y-2 text-sm font-medium text-[#5a4b63]'>
@@ -199,7 +199,7 @@ function AddProduct() {
                 <input
                   type='text'
                   placeholder='Leave blank for no discount'
-                  className='w-full rounded-2xl border border-[#e8dfe8] bg-white px-4 py-3 text-sm text-[#312533] outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff]'
+                  className='w-full rounded-lg border border-[#e8dfe8] bg-white px-4 py-3 text-sm text-[#312533] outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff]'
                 />
               </label>
             </div>
