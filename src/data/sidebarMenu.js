@@ -21,6 +21,26 @@ export const sidebarSections = [
             path: '/products/all-products',
             description: 'Browse, search, and update every product in your catalog.',
           },
+          {
+            label: 'Categories',
+            path: '/products/categories',
+            description: 'Organize products by category and manage classification.',
+          },
+          {
+            label: 'Collections',
+            path: '/products/collections',
+            description: 'Group products into collections for promotions and merchandising.',
+          },
+          {
+            label: 'Attributes',
+            path: '/products/attributes',
+            description: 'Define product attributes like metal type, gemstone, and size.',
+          },
+          {
+            label: 'Reviews',
+            path: '/products/reviews',
+            description: 'View and moderate customer reviews on product listings.',
+          },
         ],
       },
       {
