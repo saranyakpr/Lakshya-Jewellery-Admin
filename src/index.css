@@ -34,9 +34,14 @@ body,
   min-height: 100%;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at top left, rgba(255, 255, 255, 0.94), transparent 30%),
     linear-gradient(180deg, #f5eef3 0%, #f4edf2 100%);

@@ -54,8 +54,8 @@ function AllProductsPage() {
           </div>
         </div>
 
-        <div className='overflow-hidden rounded-[1.8rem] border border-[#efe3ed]'>
-          <table className='min-w-full border-separate border-spacing-0 text-left'>
+        <div className='overflow-x-auto rounded-[1.8rem] border border-[#efe3ed]'>
+          <table className='w-full min-w-[62rem] border-separate border-spacing-0 text-left'>
             <thead className='bg-[#fbf2ff] text-[0.82rem] uppercase tracking-[0.12em] text-[#755270]'>
               <tr>
                 <th className='px-3 py-3'>Image</th>
