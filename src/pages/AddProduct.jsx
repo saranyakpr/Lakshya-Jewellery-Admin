@@ -24,7 +24,7 @@ function AddProduct() {
         <div className='space-y-6'>
           <section className='rounded-lg border border-[#efe3ed] bg-white p-6 shadow-[0_8px_30px_rgba(77,37,74,0.06)]'>
             <div className='flex flex-col gap-1'>
-              <p className='text-sm font-semibold uppercase tracking-[0.24em] text-[#8e76a0]'>Basic Information</p>
+              <p className='text-sm font-bold uppercase mb-2'>Basic Information</p>
               {/* <p className='text-sm text-[#776378]'>Product title, SKU, slug and description.</p> */}
             </div>
 

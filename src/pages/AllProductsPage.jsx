@@ -1,76 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { FiEdit3, FiEye, FiPlus, FiSearch, FiTrash2 } from 'react-icons/fi'
 import PageLayout from '../components/PageLayout'
-import diamond from '../assets/Frame.png'
-
-const products = [
-  {
-    id: 'LKS-0021',
-    name: 'Diamond Solitaire Ring 18K',
-    category: 'Rings',
-    goldWt: '4.2g',
-    diaWt: '0.5ct',
-    price: '₹1,82,000',
-    stock: 24,
-    status: 'Active',
-    created: 'Jan 10, 2025',
-  },
-  {
-    id: 'LKS-0022',
-    name: 'Rose Gold Bridal Necklace Set',
-    category: 'Necklaces',
-    goldWt: '18.5g',
-    diaWt: '1.2ct',
-    price: '₹3,92,000',
-    stock: 8,
-    status: 'Active',
-    created: 'Jan 10, 2025',
-  },
-  {
-    id: 'LKS-0023',
-    name: 'Platinum Diamond Bangle',
-    category: 'Bangles',
-    goldWt: '12.0g',
-    diaWt: '0.8ct',
-    price: '₹2,64,000',
-    stock: 15,
-    status: 'Active',
-    created: 'Jan 10, 2025',
-  },
-  {
-    id: 'LKS-0024',
-    name: 'Gold Kundan Jhumka Earrings',
-    category: 'Earrings',
-    goldWt: '6.8g',
-    diaWt: '0.0ct',
-    price: '₹48,200',
-    stock: 42,
-    status: 'Active',
-    created: 'Jan 10, 2025',
-  },
-  {
-    id: 'LKS-0025',
-    name: 'Silver Kundan Necklace Set',
-    category: 'Necklaces',
-    goldWt: '22.0g',
-    diaWt: '0.0ct',
-    price: '₹38,500',
-    stock: 0,
-    status: 'Inactive',
-    created: 'Jan 10, 2025',
-  },
-  {
-    id: 'LKS-0026',
-    name: 'White Gold Tennis Bracelet',
-    category: 'Bracelets',
-    goldWt: '8.4g',
-    diaWt: '2.0ct',
-    price: '₹5,24,000',
-    stock: 3,
-    status: 'Active',
-    created: 'Jan 10, 2025',
-  },
-]
+import { products } from '../data/products'
 
 function AllProductsPage() {
   const navigate = useNavigate()
@@ -145,8 +76,7 @@ function AllProductsPage() {
                 <tr key={product.id} className={index % 2 === 0 ? 'bg-white' : 'bg-[#fcf5ff]'}>
                   <td className='border-t border-[#f1e5f2] px-3 py-3'>
                     <div className='flex h-10 w-10 items-center justify-center rounded-xl bg-[#f4e9f8] text-sm font-semibold text-[#7f4a8f]'>
-                      {/* {product.id.slice(-2)} */}
-                      <img src={diamond} alt='diamond'/>
+                      <img src={product.image} alt={product.name} className='h-full w-full object-contain' />
                     </div>
                   </td>
                   <td className='border-t border-[#f1e5f2] px-3 py-3 text-sm text-[#825a7b]'>{product.id}</td>
@@ -170,7 +100,12 @@ function AllProductsPage() {
                   <td className='border-t border-[#f1e5f2] px-3 py-3 text-sm text-[#6e5a6e]'>{product.created}</td>
                   <td className='border-t border-[#f1e5f2] px-3 py-3 text-sm text-[#5f4b6e]'>
                     <div className='flex items-center gap-2'>
-                      <button type='button' className='inline-flex h-8 w-8 items-center justify-center text-[#6b4d7a] transition hover:bg-[#faf2ff] cursor-pointer'>
+                          <button
+                        type='button'
+                        onClick={() => navigate(`/products/${product.id}`)}
+                        className='inline-flex h-8 w-8 items-center justify-center text-[#6b4d7a] transition hover:bg-[#faf2ff] cursor-pointer'
+                        aria-label={`View ${product.name}`}
+                      >
                         <FiEye className='h-4 w-4' />
                       </button>
                       <button type='button' className='inline-flex h-8 w-8 items-center justify-center text-[#8d5e94] transition hover:bg-[#faf2ff] cursor-pointer'>
