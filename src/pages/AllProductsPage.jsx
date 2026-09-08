@@ -79,7 +79,7 @@ function AllProductsPage() {
 
         <div className='overflow-x-auto rounded-[1.8rem] border border-[#efe3ed]'>
           <table className='w-full min-w-[62rem] border-separate border-spacing-0 text-left'>
-            <thead className='bg-[#fbf2ff] text-[0.82rem] uppercase tracking-[0.12em] text-[#755270]'>
+            <thead className='bg-[#fbf2ff] !text-[0.82rem] !text-[#755270]'>
               <tr>
                 <th className='px-3 py-3'>Image</th>
                 <th className='px-3 py-3'>SKU</th>
@@ -99,7 +99,7 @@ function AllProductsPage() {
                 <tr key={product.id} className={index % 2 === 0 ? 'bg-white' : 'bg-[#fcf5ff]'}>
                   <td className='border-t border-[#f1e5f2] px-3 py-3'>
                     <div className='flex h-10 w-10 items-center justify-center rounded-xl bg-[#f4e9f8] text-sm font-semibold text-[#7f4a8f]'>
-                      <img src={product.image} alt={product.name} className='h-full w-full object-contain' />
+                      <img src={product.image} alt={product.name} className='object-contain' />
                     </div>
                   </td>
                   <td className='border-t border-[#f1e5f2] px-3 py-3 text-sm text-[#825a7b]'>{product.id}</td>
