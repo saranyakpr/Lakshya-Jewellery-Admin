@@ -1,9 +1,21 @@
 import { useNavigate } from 'react-router-dom'
-import { FiEdit3, FiEye, FiPlus, FiSearch, FiTrash2 } from 'react-icons/fi'
+import { FiChevronDown, FiEdit3, FiEye, FiPlus, FiSearch, FiTrash2 } from 'react-icons/fi'
 import { PiExportBold } from "react-icons/pi";
 import PageLayout from '../components/PageLayout'
 import { products } from '../data/products'
 import { BiSelectMultiple } from "react-icons/bi";
+
+const filterOptions = [
+  { label: 'Category', options: ['categories', 'Rings', 'Necklaces', 'Bangles', 'Earrings', 'Bracelets'] },
+  { label: 'Collection', options: ['collections', 'Bridal Collection 2025', 'Festive Gold 2025', 'Minimalist Everyday Wear'] },
+  { label: 'Metal Type', options: ['Metal Types', 'Gold', 'Rose Gold', 'White Gold', 'Platinum', 'Silver'] },
+  { label: 'Gold Purity', options: ['Purities', '18 Karat', '22 Karat', '24 Karat'] },
+  { label: 'Availability', options: ['Availability', 'In Stock', 'Low Stock', 'Out of Stock'] },
+  {
+    label: 'Price Range',
+    options: ['Prices', 'Under ₹50,000', '₹50,000 - ₹1,00,000', '₹1,00,000 - ₹2,00,000', 'Above ₹2,00,000'],
+  },
+]
 
 function AllProductsPage() {
   const navigate = useNavigate()
@@ -34,26 +46,33 @@ function AllProductsPage() {
       }
     >
       <div className='rounded'>
-        <div className='mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between'>
-          <div className='flex flex-1 items-center gap-2 rounded-lg border border-[#e9d8f0] bg-[#faf3fe] px-4 py-2 shadow-sm'>
-            <FiSearch className='h-4 w-4 !text-[#8c529d]' />
+        <div className='mb-4 flex flex-col gap-3 rounded-2xl border border-[#efe3ed] bg-white p-3 shadow-[0_10px_28px_rgba(81,28,96,0.05)] sm:p-4 lg:flex-row lg:flex-nowrap lg:items-center'>
+          <div className='flex w-full items-center gap-2 rounded-xl bg-[#f7f2f6] px-4 py-2 lg:w-56 lg:shrink-0'>
+            <FiSearch className='h-4 w-4 shrink-0 !text-[#8c529d]' />
             <input
               type='text'
               aria-label='Search products'
               placeholder='Search products...'
-              className='w-full bg-transparent !text-[.9rem] !text-[#362940] outline-none placeholder:text-[#9c8ca0]'
+              className='w-full min-w-0 bg-transparent text-sm !text-[#362940] outline-none placeholder:text-[#9c8ca0]'
             />
           </div>
 
-          <div className='flex flex-wrap gap-2'>
-            {['Category', 'Collection', 'Metal Type', 'Gold Purity', 'Availability', 'Price Range'].map((filter) => (
-              <button
-                key={filter}
-                type='button'
-                className='rounded-xl border border-[#e9d8f0] bg-white px-4 py-2 !text-sm !font-medium !text-[#5f4b6e] transition hover:border-[#d7bfdc] hover:bg-[#faf2ff]'
-              >
-                {filter}
-              </button>
+          <div className='grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:flex lg:flex-1 lg:flex-nowrap lg:gap-3'>
+            {filterOptions.map((filter) => (
+              <div key={filter.label} className='relative min-w-0 lg:flex-1'>
+                <select
+                  aria-label={filter.label}
+                  defaultValue={filter.options[0]}
+                  className='w-full appearance-none rounded-xl bg-[#f7f2f6] py-2 pl-4 pr-9 text-sm !font-medium !text-[#5f4b6e] outline-none transition hover:bg-[#f1e6f4] cursor-pointer'
+                >
+                  {filter.options.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+                <FiChevronDown className='pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#7d6a83]' />
+              </div>
             ))}
           </div>
         </div>
