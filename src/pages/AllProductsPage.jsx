@@ -1,7 +1,9 @@
 import { useNavigate } from 'react-router-dom'
 import { FiEdit3, FiEye, FiPlus, FiSearch, FiTrash2 } from 'react-icons/fi'
+import { PiExportBold } from "react-icons/pi";
 import PageLayout from '../components/PageLayout'
 import { products } from '../data/products'
+import { BiSelectMultiple } from "react-icons/bi";
 
 function AllProductsPage() {
   const navigate = useNavigate()
@@ -12,16 +14,18 @@ function AllProductsPage() {
       description='1,284 products in your catalogue'
       actions={
         <>
-          <button className='rounded-xl border border-[#e9d8f0] bg-white px-4 py-2 text-sm font-semibold text-[#5f4b6e] shadow-sm transition hover:border-[#d7bfdc] hover:bg-[#fbf2ff] cursor-pointer'>
+          <button className='rounded-xl flex items-center gap-2 border border-[#e9d8f0] bg-white px-4 py-2 !text-sm !font-semibold !text-[#5f4b6e] shadow-sm transition hover:border-[#d7bfdc] hover:bg-[#fbf2ff] cursor-pointer'>
+            <BiSelectMultiple className='h-5 w-5' />
             Bulk Actions
           </button>
-          <button className='rounded-xl border border-[#e9d8f0] bg-white px-4 py-2 text-sm font-semibold text-[#5f4b6e] shadow-sm transition hover:border-[#d7bfdc] hover:bg-[#fbf2ff] cursor-pointer'>
+          <button className='rounded-xl flex items-center gap-2 border border-[#e9d8f0] bg-white px-4 py-2 !text-sm !font-semibold !text-[#5f4b6e] shadow-sm transition hover:border-[#d7bfdc] hover:bg-[#fbf2ff] cursor-pointer'>
+            <PiExportBold className='h-5 w-5' />
             Export
           </button>
           <button
             type='button'
             onClick={() => navigate('/products/add')}
-            className='inline-flex items-center gap-2 cursor-pointer rounded-xl bg-gradient-to-r from-[#7c21a0] via-[#9038c5] to-[#bc5eff] px-5 py-3 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(124,33,160,0.24)] transition hover:shadow-[0_22px_48px_rgba(124,33,160,0.28)] hover:from-[#8d33b5] hover:via-[#a947de] hover:to-[#c860ff]'
+            className='inline-flex items-center gap-2 cursor-pointer rounded-lg bg-[#7c21a0]  px-4 py-2 !text-sm !font-semibold !text-white transition hover:shadow-[0_22px_48px_rgba(124,33,160,0.28)] hover:from-[#8d33b5] hover:via-[#a947de] hover:to-[#c860ff]'
           >
             <FiPlus className='h-4 w-4' />
             Add Product
@@ -29,15 +33,15 @@ function AllProductsPage() {
         </>
       }
     >
-      <div className='rounded-[2rem] border border-[#efe3ed] bg-white/80 p-5 shadow-[0_12px_35px_rgba(81,28,96,0.06)]'>
+      <div className='rounded'>
         <div className='mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between'>
-          <div className='flex flex-1 items-center gap-2 rounded-xl border border-[#e9d8f0] bg-[#faf3fe] px-4 py-3 shadow-sm'>
-            <FiSearch className='h-4 w-4 text-[#8c529d]' />
+          <div className='flex flex-1 items-center gap-2 rounded-lg border border-[#e9d8f0] bg-[#faf3fe] px-4 py-2 shadow-sm'>
+            <FiSearch className='h-4 w-4 !text-[#8c529d]' />
             <input
               type='text'
               aria-label='Search products'
               placeholder='Search products...'
-              className='w-full bg-transparent text-sm text-[#362940] outline-none placeholder:text-[#9c8ca0]'
+              className='w-full bg-transparent !text-[.9rem] !text-[#362940] outline-none placeholder:text-[#9c8ca0]'
             />
           </div>
 
@@ -46,7 +50,7 @@ function AllProductsPage() {
               <button
                 key={filter}
                 type='button'
-                className='rounded-xl border border-[#e9d8f0] bg-white px-4 py-2 text-sm font-medium text-[#5f4b6e] transition hover:border-[#d7bfdc] hover:bg-[#faf2ff]'
+                className='rounded-xl border border-[#e9d8f0] bg-white px-4 py-2 !text-sm !font-medium !text-[#5f4b6e] transition hover:border-[#d7bfdc] hover:bg-[#faf2ff]'
               >
                 {filter}
               </button>

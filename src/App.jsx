@@ -10,6 +10,9 @@ import MenuPage from './pages/MenuPage'
 import AllProductsPage from './pages/AllProductsPage'
 import ProductDetailPage from './pages/ProductDetailPage'
 import AddProduct from './pages/AddProduct'
+import CategoriesPage from './pages/CategoriesPage'
+import CollectionsPage from './pages/CollectionsPage'
+import ReviewsPage from './pages/ReviewsPage'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -39,13 +42,19 @@ function App() {
             <Route path='/customers' element={<CustomersPage />} />
             <Route path='/products/all-products' element={<AllProductsPage />} />
             <Route path='/products/add' element={<AddProduct />} />
+            <Route path='/products/categories' element={<CategoriesPage />} />
+            <Route path='/products/collections' element={<CollectionsPage />} />
+            <Route path='/products/reviews' element={<ReviewsPage />} />
             <Route path='/products/:productId' element={<ProductDetailPage />} />
             {menuRoutes
               .filter(
                 (route) =>
                   route.path !== '/dashboard' &&
                   route.path !== '/customers' &&
-                  route.path !== '/products/all-products',
+                  route.path !== '/products/all-products' &&
+                  route.path !== '/products/categories' &&
+                  route.path !== '/products/collections' &&
+                  route.path !== '/products/reviews',
               )
               .map((route) => (
                 <Route
