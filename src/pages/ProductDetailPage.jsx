@@ -6,13 +6,13 @@ import { FaGem, FaStar } from 'react-icons/fa'
 import { FiArrowLeft, FiEdit3 } from 'react-icons/fi'
 
 const cardClass =
-  'rounded-2xl border border-[#eee3ec] bg-white p-5 shadow-[0_10px_28px_rgba(81,28,96,0.06)] sm:p-6'
+  'rounded-2xl border border-[#eee3ec] bg-white p-3 shadow-[0_10px_28px_rgba(81,28,96,0.06)] sm:p-4'
 
 function StatItem({ label, value }) {
   return (
     <div>
-      <p className='text-[0.7rem] uppercase tracking-[0.14em] text-[#9d8fa3]'>{label}</p>
-      <p className='mt-1 text-sm font-semibold text-[#312533]'>{value}</p>
+      <p className='!text-[0.7rem] !uppercase !tracking-[0.14em] !text-[#9d8fa3]'>{label}</p>
+      <p className='!text-sm !font-semibold !text-[#312533]'>{value}</p>
     </div>
   )
 }
@@ -51,14 +51,14 @@ function ProductDetailPage() {
           <button
             type='button'
             onClick={() => navigate('/products/all-products')}
-            className='inline-flex items-center gap-2 rounded-xl border border-[#e9d8f0] bg-white px-4 py-3 text-sm font-semibold text-[#5f4b6e] transition hover:border-[#d7bfdc] hover:bg-[#faf2ff]'
+            className='inline-flex items-center gap-2 rounded-xl border border-[#e9d8f0] bg-white px-4 py-2 !text-sm !font-semibold !text-[#5f4b6e] transition hover:border-[#d7bfdc] hover:bg-[#faf2ff]'
           >
             <FiArrowLeft className='h-4 w-4' />
             Back to List
           </button>
           <button
             type='button'
-            className='inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#7c21a0] via-[#9038c5] to-[#bc5eff] px-5 py-3 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(124,33,160,0.24)] transition hover:shadow-[0_22px_48px_rgba(124,33,160,0.28)] hover:from-[#8d33b5] hover:via-[#a947de] hover:to-[#c860ff]'
+            className='inline-flex items-center gap-2 rounded-xl bg-[#60195E] px-4 py-2 !text-sm !font-semibold !text-white shadow-[0_18px_40px_rgba(124,33,160,0.24)] transition cursor-pointer'
           >
             <FiEdit3 className='h-4 w-4' />
             Edit Product
@@ -70,21 +70,21 @@ function ProductDetailPage() {
         <div className='space-y-6'>
           <div className={cardClass}>
             <div className='flex items-center justify-between gap-3'>
-              <h2 className='text-base font-bold text-[#241a2c] sm:text-lg'>Product Overview</h2>
-              <span className='inline-flex shrink-0 items-center rounded-full bg-[#dcfaea] px-3 py-1 text-xs font-semibold text-[#15803d] sm:px-4 sm:text-sm'>
+              <h2 className='!text-base !font-bold !text-[#241a2c] !sm:text-lg'>Product Overview</h2>
+              <span className='inline-flex shrink-0 items-center rounded-full bg-[#dcfaea] px-3 py-1 !text-xs !font-semibold text-[#15803d] sm:px-4 sm:text-sm'>
                 {product.status}
               </span>
             </div>
 
             <div className='mt-5 flex flex-col gap-4 sm:flex-row sm:items-start'>
-              <div className='flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-[#f3e8fb]'>
-                <FaGem className='h-7 w-7 text-[#8c3fc4]' />
+              <div className='flex !h-[7rem] !w-[7rem] shrink-0 items-center justify-center rounded-2xl bg-[#f3e8fb]'>
+                <FaGem className='h-8 w-8 text-[#60195E]' />
               </div>
 
               <div className='min-w-0 flex-1'>
-                <h3 className='text-lg font-bold text-[#221b30] sm:text-xl'>{product.name}</h3>
+                <h3 className='!text-lg !font-bold !text-[#221b30] !sm:text-xl'>{product.name}</h3>
 
-                <div className='mt-4 flex flex-wrap gap-x-8 gap-y-3'>
+                <div className='mt-3 flex flex-wrap gap-x-8 gap-y-3'>
                   <StatItem label='Category' value={product.category} />
                   <StatItem label='Metal' value={product.metal} />
                   <StatItem label='Gold Weight' value={product.goldWt} />
@@ -95,7 +95,7 @@ function ProductDetailPage() {
           </div>
 
           <div className={cardClass}>
-            <h3 className='text-base font-bold text-[#241a2c] sm:text-lg'>Pricing Breakdown</h3>
+            <h3 className='!text-base !font-bold !text-[#241a2c] !sm:text-lg'>Pricing Breakdown</h3>
 
             {product.pricing.length > 0 ? (
               <div className='mt-4 divide-y divide-[#f1e5f2]'>
@@ -110,15 +110,15 @@ function ProductDetailPage() {
               <p className='mt-4 text-sm text-[#6e5a6e]'>No pricing breakdown is available for this product.</p>
             )}
 
-            <div className='mt-3 flex items-center justify-between gap-4 rounded-xl bg-[#f5edff] px-4 py-4 text-sm font-bold text-[#531f7d] sm:px-5'>
+            <div className='mt-3 flex items-center justify-between gap-4 rounded-xl bg-[#f5edff] px-4 py-3 text-sm font-bold text-[#531f7d] sm:px-3'>
               <span>Selling Price (incl. GST)</span>
-              <span>{product.price}</span>
+              <span className='!text-[1rem] !font-extrabold'>{product.price}</span>
             </div>
           </div>
 
           <div className={cardClass}>
             <div className='flex flex-wrap items-center justify-between gap-3'>
-              <h3 className='text-base font-bold text-[#241a2c] sm:text-lg'>Customer Reviews</h3>
+              <h3 className='!text-base !font-bold !text-[#241a2c] !sm:text-lg'>Customer Reviews</h3>
               {primaryReview ? (
                 <span className='inline-flex shrink-0 items-center gap-1.5 rounded-full bg-[#fff4e0] px-3 py-1 text-xs font-semibold text-[#a85d00] sm:text-sm'>
                   <FaStar className='h-3 w-3' />
@@ -129,11 +129,13 @@ function ProductDetailPage() {
 
             {primaryReview ? (
               <div className='mt-4'>
-                <p className='text-sm font-semibold text-[#312533]'>{primaryReview.author}</p>
-                <p className='mt-1 text-xs text-[#9d8fa3]'>
-                  {Math.round(primaryReview.rating)} stars · {primaryReview.date}
-                </p>
-                <p className='mt-3 text-sm leading-6 text-[#5d4b67]'>{primaryReview.text}</p>
+                <div className='flex justify-between'>
+                  <p className='!text-sm !font-semibold !text-[#312533]'>{primaryReview.author}</p>
+                  <p className='mt-1 !text-xs !text-[#9d8fa3]'>
+                    {Math.round(primaryReview.rating)} stars · {primaryReview.date}
+                  </p>
+                </div>
+                <p className='mt-1 !text-sm !leading-6 !text-[#5d4b67]'>{primaryReview.text}</p>
               </div>
             ) : (
               <p className='mt-4 text-sm text-[#6e5a6e]'>No reviews are available for this product yet.</p>
@@ -143,11 +145,11 @@ function ProductDetailPage() {
 
         <aside className='space-y-6'>
           <div className={cardClass}>
-            <h3 className='text-base font-bold text-[#241a2c] sm:text-lg'>Inventory Details</h3>
+            <h3 className='!text-base !font-bold !text-[#241a2c] !sm:text-lg'>Inventory Details</h3>
 
-            <div className='mt-4 rounded-xl bg-[#e9fbf1] px-4 py-4'>
-              <p className='text-xs font-semibold uppercase tracking-[0.14em] text-[#2f8f5f]'>Current Stock</p>
-              <p className='mt-1 text-2xl font-black text-[#15803d]'>{product.stock} units</p>
+            <div className='mt-4 flex justify-between items-center rounded-xl bg-[#e9fbf1] p-2'>
+              <p className='!text-xs !font-semibold !text-[#2f8f5f]'>Current Stock</p>
+              <p className='!text-xl font-bold !text-[#15803d]'>{product.stock} units</p>
             </div>
 
             <div className='mt-4 grid grid-cols-2 gap-4'>
@@ -157,7 +159,7 @@ function ProductDetailPage() {
           </div>
 
           <div className={cardClass}>
-            <h3 className='text-base font-bold text-[#241a2c] sm:text-lg'>Audit Logs</h3>
+            <h3 className='!text-base !font-bold !text-[#241a2c] !sm:text-lg'>Audit Logs</h3>
 
             <div className='mt-4 space-y-4'>
               {product.auditLogs.length > 0 ? (
