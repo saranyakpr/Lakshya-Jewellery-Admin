@@ -86,7 +86,7 @@ function CategoriesPage() {
         <div className={`${cardClass} p-5 sm:p-6`}>
           <h3 className='!text-base !font-bold !text-[#241a2c] !sm:text-lg'>Add Category</h3>
 
-          <div className='mt-5 space-y-4'>
+          <div className='mt-3 space-y-4'>
             <label className='block space-y-2 text-sm font-medium text-[#5a4b63]'>
               Category Name *
               <input

@@ -35,7 +35,7 @@ function CollectionsPage() {
       actions={
         <button
           type='button'
-          className='inline-flex items-center gap-2 rounded-xl px-4 py-2 !text-sm !font-semibold !text-white bg-[#60195E] shadow-[0_16px_30px_rgba(124,33,160,0.24)] transition hover:bg-[#8c33b5] cursor-pointer'
+          className='inline-flex items-center gap-2 rounded-xl px-4 py-2 !text-sm !font-semibold !text-white bg-[#60195E] cursor-pointer'
         >
           <FiPlus className='h-4 w-4' />
           New Collection
@@ -85,7 +85,7 @@ function CollectionsPage() {
         <div className={`${cardClass} p-5 sm:p-6`}>
           <h3 className='text-base font-bold text-[#241a2c] sm:text-lg'>New Collection</h3>
 
-          <div className='mt-5 space-y-4'>
+          <div className='mt-3 space-y-4'>
             <label className='block space-y-2 text-sm font-medium text-[#5a4b63]'>
               Collection Name *
               <input
@@ -93,7 +93,7 @@ function CollectionsPage() {
                 value={collectionName}
                 onChange={(event) => setCollectionName(event.target.value)}
                 placeholder='e.g. Summer Bloom 2025'
-                className='w-full rounded-lg border border-[#e8dfe8] bg-[#fbf4ff] px-4 py-3 text-sm text-[#312533] outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff]'
+                className='w-full rounded-lg border border-[#e8dfe8] px-2 py-2 !text-sm !text-[#312533] outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff] mt-1'
               />
             </label>
 
@@ -112,13 +112,13 @@ function CollectionsPage() {
                 value={description}
                 onChange={(event) => setDescription(event.target.value)}
                 placeholder='Describe this collection...'
-                className='w-full rounded-lg border border-[#e8dfe8] bg-[#fbf4ff] px-4 py-3 text-sm text-[#312533] outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff]'
+                className='w-full rounded-lg border border-[#e8dfe8] px-2 py-2 !text-sm !text-[#312533] outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff] mt-1'
               />
             </label>
 
             <label className='block space-y-2 text-sm font-medium text-[#5a4b63]'>
               Status
-              <select className='w-full rounded-lg border border-[#e8dfe8] bg-[#fbf4ff] px-4 py-3 text-sm text-[#312533] outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff]'>
+              <select className='w-full rounded-lg border border-[#e8dfe8] px-2 py-2 !text-sm !text-[#312533] outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff] mt-1'>
                 <option>Active</option>
                 <option>Draft</option>
                 <option>Inactive</option>
@@ -127,7 +127,7 @@ function CollectionsPage() {
 
             <button
               type='button'
-              className='w-full rounded-lg bg-[#7c21a0] px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_30px_rgba(124,33,160,0.24)] transition hover:bg-[#8c33b5] cursor-pointer'
+              className='w-full rounded-lg bg-[#60195E] px-4 py-3 !text-sm font-semibold text-white shadow-[0_16px_30px_rgba(124,33,160,0.24)] transition hover:bg-[#8c33b5] cursor-pointer'
             >
               Save Collection
             </button>
