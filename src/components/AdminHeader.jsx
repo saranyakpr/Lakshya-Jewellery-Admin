@@ -206,7 +206,7 @@ function AdminHeader({ onMenuClick }) {
 
   return (
     <header className='sticky top-0 z-20 border-b border-white/70 bg-white/86 backdrop-blur-xl'>
-      <div className='flex flex-wrap items-center gap-3 px-4 py-3 sm:px-6 lg:px-8'>
+      <div className='flex flex-wrap items-center gap-3 px-4 py-3 sm:px-6 lg:px-8 border-b-2 border-[var(--panel-border)]'>
         <button
           type='button'
           onClick={onMenuClick}
@@ -228,7 +228,7 @@ function AdminHeader({ onMenuClick }) {
         </div>
 
         <div className='ml-auto flex items-center gap-2 sm:gap-3'>
-          <div className='hidden rounded-xl border border-[#f4d599] bg-[var(--gold-bg)] px-3 py-1.5 text-sm font-semibold text-[var(--gold-text)] shadow-sm sm:block'>
+          <div className='hidden rounded-xl bg-[#FFF8E1] border border-[#E8C87A] px-3 py-1.5 text-sm font-semibold text-[var(--gold-text)] shadow-sm sm:block'>
             Gold: Rs. 6,842/g
           </div>
 

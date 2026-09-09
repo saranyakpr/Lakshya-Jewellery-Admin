@@ -7,7 +7,7 @@
   background:
     radial-gradient(circle at top left, rgba(255, 255, 255, 0.94), transparent 30%),
     linear-gradient(180deg, #f5eef3 0%, #f4edf2 100%);
-  --app-bg: #f4edf2;
+  --app-bg: #f3f0f2c9;
   --panel-border: #e9dde6;
   --brand-50: #f6e8f3;
   --brand-100: #e8cae3;
