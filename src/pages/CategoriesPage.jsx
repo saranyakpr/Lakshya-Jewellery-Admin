@@ -25,7 +25,7 @@ function CategoriesPage() {
       actions={
         <button
           type='button'
-          className='inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#7c21a0] via-[#9038c5] to-[#bc5eff] px-5 py-3 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(124,33,160,0.24)] transition hover:shadow-[0_22px_48px_rgba(124,33,160,0.28)] hover:from-[#8d33b5] hover:via-[#a947de] hover:to-[#c860ff]'
+          className='inline-flex items-center gap-2 rounded-xl px-4 py-2 !text-sm !font-semibold !text-white bg-[#7c21a0] cursor-pointer'
         >
           <FiPlus className='h-4 w-4' />
           Add Category
@@ -36,7 +36,7 @@ function CategoriesPage() {
         <div className={`${cardClass} overflow-hidden`}>
           <div className='overflow-x-auto'>
             <table className='w-full min-w-[42rem] border-separate border-spacing-0 text-left'>
-              <thead className='bg-[#fbf2ff] text-[0.78rem] uppercase tracking-[0.1em] text-[#755270]'>
+              <thead className='!bg-[#fbf2ff] !text-[0.78rem] !text-[#755270]'>
                 <tr>
                   <th className='px-4 py-3 sm:px-5'>Category Name</th>
                   <th className='px-4 py-3 sm:px-5'>Parent Category</th>
@@ -84,7 +84,7 @@ function CategoriesPage() {
         </div>
 
         <div className={`${cardClass} p-5 sm:p-6`}>
-          <h3 className='text-base font-bold text-[#241a2c] sm:text-lg'>Add Category</h3>
+          <h3 className='!text-base !font-bold !text-[#241a2c] !sm:text-lg'>Add Category</h3>
 
           <div className='mt-5 space-y-4'>
             <label className='block space-y-2 text-sm font-medium text-[#5a4b63]'>
@@ -94,13 +94,13 @@ function CategoriesPage() {
                 value={categoryName}
                 onChange={(event) => setCategoryName(event.target.value)}
                 placeholder='e.g. Pendants'
-                className='w-full rounded-lg border border-[#e8dfe8] bg-[#fbf4ff] px-4 py-3 text-sm text-[#312533] outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff]'
+                className='w-full rounded-lg border border-[#e8dfe8] px-2 py-2 !text-sm !text-[#312533] outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff] mt-1'
               />
             </label>
 
             <label className='block space-y-2 text-sm font-medium text-[#5a4b63]'>
               Parent Category
-              <select className='w-full rounded-lg border border-[#e8dfe8] bg-[#fbf4ff] px-4 py-3 text-sm text-[#312533] outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff]'>
+              <select className='w-full rounded-lg border border-[#e8dfe8] px-2 py-2 !text-sm !text-[#312533] outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff] mt-1'>
                 <option>None (Top Level)</option>
                 {categories.map((category) => (
                   <option key={category.name}>{category.name}</option>
@@ -115,13 +115,13 @@ function CategoriesPage() {
                 value={description}
                 onChange={(event) => setDescription(event.target.value)}
                 placeholder='Category description for SEO...'
-                className='w-full rounded-lg border border-[#e8dfe8] bg-[#fbf4ff] px-4 py-3 text-sm text-[#312533] outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff]'
+                className='w-full rounded-lg border border-[#e8dfe8] px-2 py-2 !text-sm !text-[#312533] outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff] mt-1'
               />
             </label>
 
             <button
               type='button'
-              className='flex w-full flex-col items-center justify-center gap-2 rounded-lg border border-dashed border-[#d9c3e6] bg-[#fbf4ff] px-4 py-6 text-sm font-semibold text-[#7b3b9a] transition hover:border-[#b78cd2] hover:bg-[#f8ecff] cursor-pointer'
+              className='flex w-full flex-col items-center justify-center gap-2 rounded-lg border border-dashed border-[#d9c3e6] bg-[#fbf4ff] px-4 py-6 text-sm font-semibold text-[#60195E] transition hover:border-[#b78cd2] hover:bg-[#f8ecff] cursor-pointer'
             >
               <FiImage className='h-5 w-5' />
               Upload Category Image
@@ -129,7 +129,7 @@ function CategoriesPage() {
 
             <button
               type='button'
-              className='w-full rounded-lg bg-[#7c21a0] px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_30px_rgba(124,33,160,0.24)] transition hover:bg-[#8c33b5] cursor-pointer'
+              className='w-full rounded-lg bg-[#60195E] px-4 py-3 !text-sm font-semibold text-white shadow-[0_16px_30px_rgba(124,33,160,0.24)] transition hover:bg-[#8c33b5] cursor-pointer'
             >
               Save Category
             </button>

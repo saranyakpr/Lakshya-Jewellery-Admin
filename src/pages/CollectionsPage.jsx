@@ -35,7 +35,7 @@ function CollectionsPage() {
       actions={
         <button
           type='button'
-          className='inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#7c21a0] via-[#9038c5] to-[#bc5eff] px-5 py-3 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(124,33,160,0.24)] transition hover:shadow-[0_22px_48px_rgba(124,33,160,0.28)] hover:from-[#8d33b5] hover:via-[#a947de] hover:to-[#c860ff]'
+          className='inline-flex items-center gap-2 rounded-xl px-4 py-2 !text-sm !font-semibold !text-white bg-[#60195E] shadow-[0_16px_30px_rgba(124,33,160,0.24)] transition hover:bg-[#8c33b5] cursor-pointer'
         >
           <FiPlus className='h-4 w-4' />
           New Collection
