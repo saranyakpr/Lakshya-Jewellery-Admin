@@ -246,11 +246,12 @@ function AddProduct() {
             </div>
 
             <div className='space-y-4'>
-              <div className='rounded-xl border border-[#059669] bg-[#e8f8f0] p-2 !text-sm text-[#14694e] shadow-[inset_0_1px_0_rgba(20,105,78,0.08)]'>
-                <span className='h-[1rem] w-[1rem] bg-[#059669] rounded-full'></span>
+              <div className='flex items-center gap-2 rounded-lg border border-[#059669] bg-[#e8f8f0] p-2 !text-sm text-[#14694e] shadow-[inset_0_1px_0_rgba(20,105,78,0.08)]'>
+                <span className='inline-block h-[.8rem] w-[.8rem] shrink-0 rounded-full bg-[#059669]'></span>
                 <p className='!font-semibold'>Active — visible on store</p>
               </div>
-              <div className='rounded-xl border border-[#E8E0E8] bg-[#F7F3F7] p-2 !text-sm text-[#646464] shadow-[inset_0_1px_0_rgba(124,35,160,0.08)]'>
+              <div className='flex items-center gap-2 rounded-lg border border-[#E8E0E8] bg-[#F7F3F7] p-2 !text-sm text-[#646464] shadow-[inset_0_1px_0_rgba(20,105,78,0.08)]'>
+                <span className='inline-block h-[.8rem] w-[.8rem] shrink-0 rounded-full bg-[#E8E0E8]'></span>
                 <p className='!font-semibold'>Draft — not published yet</p>
               </div>
             </div>
