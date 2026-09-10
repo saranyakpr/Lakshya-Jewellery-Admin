@@ -16,7 +16,7 @@ export function PrimaryButton({ icon: Icon, children, onClick, className = '' })
     <button
       type='button'
       onClick={onClick}
-      className={`inline-flex items-center gap-2 cursor-pointer rounded-lg bg-[#7c21a0] px-4 py-2 !text-sm !font-semibold !text-white transition hover:shadow-[0_22px_48px_rgba(124,33,160,0.28)] hover:from-[#8d33b5] hover:via-[#a947de] hover:to-[#c860ff] ${className}`}
+      className={`inline-flex items-center gap-2 cursor-pointer rounded-lg bg-[#7c21a0] px-4 py-2 !text-sm !font-semibold !text-white ${className}`}
     >
       {Icon ? <Icon className='h-4 w-4' /> : null}
       {children}

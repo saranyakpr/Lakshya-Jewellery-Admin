@@ -14,6 +14,7 @@ import CategoriesPage from './pages/CategoriesPage'
 import CollectionsPage from './pages/CollectionsPage'
 import ReviewsPage from './pages/ReviewsPage'
 import StockManagementPage from './pages/StockManagementPage'
+import AddInventoryPage from './pages/AddInventoryPage'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -47,6 +48,7 @@ function App() {
             <Route path='/products/collections' element={<CollectionsPage />} />
             <Route path='/products/reviews' element={<ReviewsPage />} />
             <Route path='/inventory/stock-management' element={<StockManagementPage />} />
+            <Route path='/inventory/add' element={<AddInventoryPage />} />
             <Route path='/products/:productId' element={<ProductDetailPage />} />
             {menuRoutes
               .filter(
@@ -57,7 +59,8 @@ function App() {
                   route.path !== '/products/categories' &&
                   route.path !== '/products/collections' &&
                   route.path !== '/products/reviews' &&
-                  route.path !== '/inventory/stock-management',
+                  route.path !== '/inventory/stock-management' &&
+                  route.path !== '/inventory/add',
               )
               .map((route) => (
                 <Route

@@ -4,8 +4,7 @@ import { PiExportBold } from 'react-icons/pi'
 import { BiSelectMultiple } from 'react-icons/bi'
 import PageLayout from '../components/PageLayout'
 import SearchFilterBar from '../components/SearchFilterBar'
-import DataTable from '../components/DataTable'
-import TablePagination from '../components/TablePagination'
+import PaginatedDataTable from '../components/PaginatedDataTable'
 import { OutlineButton, PrimaryButton } from '../components/ToolbarButtons'
 import { products } from '../data/products'
 
@@ -119,7 +118,7 @@ function StockManagementPage() {
         <>
           <OutlineButton icon={BiSelectMultiple}>Bulk Actions</OutlineButton>
           <OutlineButton icon={PiExportBold}>Export</OutlineButton>
-          <PrimaryButton icon={FiPlus} onClick={() => navigate('/products/add')}>
+          <PrimaryButton icon={FiPlus} onClick={() => navigate('/inventory/add')}>
             Add Inventory
           </PrimaryButton>
         </>
@@ -128,9 +127,13 @@ function StockManagementPage() {
       <div className='rounded'>
         <SearchFilterBar searchPlaceholder='Search products...' searchAriaLabel='Search products' filters={filterOptions} />
 
-        <DataTable columns={columns} rows={stockItems} rowKey={(item) => item.id} minWidthClassName='min-w-[72rem]' />
-
-        <TablePagination label='Showing 1-6 of 1,284 products' pages={[1, 2]} activePage={1} />
+        <PaginatedDataTable
+          columns={columns}
+          rows={stockItems}
+          rowKey={(item) => item.id}
+          minWidthClassName='min-w-[72rem]'
+          itemLabel='products'
+        />
       </div>
     </PageLayout>
   )
