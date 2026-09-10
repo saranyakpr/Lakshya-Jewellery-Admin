@@ -48,7 +48,30 @@ export const sidebarSections = [
         icon: 'inventory',
         badge: '3',
         path: '/inventory',
+        expanded: false,
         description: 'Track stock levels, item availability, and replenishment needs.',
+        children: [
+          {
+            label: 'Stock Management',
+            path: '/inventory/stock-management',
+            description: 'View and manage stock levels across every warehouse.',
+          },
+          {
+            label: 'Warehouses',
+            path: '/inventory/warehouses',
+            description: 'Manage warehouse locations and their inventory allocation.',
+          },
+          {
+            label: 'Low Stock Alerts',
+            path: '/inventory/low-stock-alerts',
+            description: 'Monitor products running low and needing replenishment.',
+          },
+          {
+            label: 'Stock History',
+            path: '/inventory/stock-history',
+            description: 'Review historical stock movements and adjustments.',
+          },
+        ],
       },
       {
         label: 'Orders',
