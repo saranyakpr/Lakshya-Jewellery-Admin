@@ -18,6 +18,7 @@ import AddInventoryPage from './pages/AddInventoryPage'
 import WarehousesPage from './pages/WarehousesPage'
 import AddWarehousePage from './pages/AddWarehousePage'
 import LowStockAlertsPage from './pages/LowStockAlertsPage'
+import StockHistoryPage from './pages/StockHistoryPage'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -55,6 +56,7 @@ function App() {
             <Route path='/inventory/warehouses' element={<WarehousesPage />} />
             <Route path='/inventory/warehouses/add' element={<AddWarehousePage />} />
             <Route path='/inventory/low-stock-alerts' element={<LowStockAlertsPage />} />
+            <Route path='/inventory/stock-history' element={<StockHistoryPage />} />
             <Route path='/products/:productId' element={<ProductDetailPage />} />
             {menuRoutes
               .filter(
@@ -69,7 +71,8 @@ function App() {
                   route.path !== '/inventory/add' &&
                   route.path !== '/inventory/warehouses' &&
                   route.path !== '/inventory/warehouses/add' &&
-                  route.path !== '/inventory/low-stock-alerts',
+                  route.path !== '/inventory/low-stock-alerts' &&
+                  route.path !== '/inventory/stock-history',
               )
               .map((route) => (
                 <Route
