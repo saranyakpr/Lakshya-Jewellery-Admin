@@ -19,6 +19,9 @@ import WarehousesPage from './pages/WarehousesPage'
 import AddWarehousePage from './pages/AddWarehousePage'
 import LowStockAlertsPage from './pages/LowStockAlertsPage'
 import StockHistoryPage from './pages/StockHistoryPage'
+import AllOrdersPage from './pages/AllOrdersPage'
+import ReturnsRefundsPage from './pages/ReturnsRefundsPage'
+import ShippingTrackingPage from './pages/ShippingTrackingPage'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -57,6 +60,9 @@ function App() {
             <Route path='/inventory/warehouses/add' element={<AddWarehousePage />} />
             <Route path='/inventory/low-stock-alerts' element={<LowStockAlertsPage />} />
             <Route path='/inventory/stock-history' element={<StockHistoryPage />} />
+            <Route path='/orders/all-orders' element={<AllOrdersPage />} />
+            <Route path='/orders/returns-refunds' element={<ReturnsRefundsPage />} />
+            <Route path='/orders/shipping-tracking' element={<ShippingTrackingPage />} />
             <Route path='/products/:productId' element={<ProductDetailPage />} />
             {menuRoutes
               .filter(
@@ -72,7 +78,10 @@ function App() {
                   route.path !== '/inventory/warehouses' &&
                   route.path !== '/inventory/warehouses/add' &&
                   route.path !== '/inventory/low-stock-alerts' &&
-                  route.path !== '/inventory/stock-history',
+                  route.path !== '/inventory/stock-history' &&
+                  route.path !== '/orders/all-orders' &&
+                  route.path !== '/orders/returns-refunds' &&
+                  route.path !== '/orders/shipping-tracking',
               )
               .map((route) => (
                 <Route
