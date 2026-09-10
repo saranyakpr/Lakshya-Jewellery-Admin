@@ -11,7 +11,7 @@ import {
 } from 'react-icons/fi'
 import { PiExportBold } from 'react-icons/pi'
 import PageLayout from '../components/PageLayout'
-import DataTable from '../components/DataTable'
+import PaginatedDataTable from '../components/PaginatedDataTable'
 import { OutlineButton } from '../components/ToolbarButtons'
 import { stockHistory } from '../data/stockHistory'
 
@@ -66,7 +66,6 @@ const statCards = [
 const categoryOptions = ['All Categories', 'Rings', 'Necklaces', 'Bangles', 'Earrings', 'Bracelets']
 const warehouseOptions = ['All Warehouses', 'Main Store', 'Vault A', 'Branch 1', 'Branch 2']
 const transactionTypeOptions = ['All Transaction Types', 'Stock In', 'Stock Out', 'Adjustment']
-const rowsPerPageOptions = ['10', '25', '50', '100']
 
 const typeBadgeClass = {
   'Stock In': 'bg-[#dcfaea] text-[#15803d]',
@@ -199,16 +198,18 @@ function StockHistoryPage() {
           return (
             <div
               key={card.label}
-              className='rounded-2xl border border-[#efe3ed] bg-white p-4 shadow-[0_10px_28px_rgba(81,28,96,0.05)]'
+              className='flex gap-4 items-center rounded-2xl border border-[#efe3ed] bg-white p-4 shadow-[0_10px_28px_rgba(81,28,96,0.05)]'
             >
               <div className='flex items-center gap-2.5'>
                 <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-xl ${card.iconBg}`}>
                   <Icon className={`h-4 w-4 ${card.iconColor}`} />
                 </span>
-                <p className='text-[0.68rem] font-bold uppercase tracking-[0.06em] text-[#9d8fa3]'>{card.label}</p>
               </div>
-              <p className='mt-3 text-[1.5rem] font-black tracking-[-0.02em] text-[#241a2c]'>{card.value}</p>
-              <p className={`mt-1 text-sm font-semibold ${card.subColor}`}>{card.subtext}</p>
+              <div>
+                <p className='!text-[0.6rem] !font-bold tracking-[0.06em] !text-[#9d8fa3]'>{card.label}</p>
+                <p className='!text-[1.5rem] !font-black !tracking-[-0.02em] !text-[#241a2c]'>{card.value}</p>
+                <p className={`mt-1 !text-[0.7rem] !font-semibold ${card.subColor}`}>{card.subtext}</p>
+              </div>
             </div>
           )
         })}
@@ -262,69 +263,14 @@ function StockHistoryPage() {
         </div>
       </div>
 
-      <div>
-        <DataTable columns={columns} rows={stockHistory} rowKey={(item) => item.reference} minWidthClassName='min-w-[72rem]' />
-
-        <div className='mt-4 flex flex-col gap-3 border-t border-[#efe3ed] pt-4 sm:flex-row sm:items-center sm:justify-between'>
-          <p className='text-sm text-[#7e6d83]'>Showing 1 to {stockHistory.length} of 1,248 entries</p>
-
-          <div className='flex flex-wrap items-center gap-2'>
-            <button
-              type='button'
-              disabled
-              className='rounded-full border border-[#e9d8f0] bg-white px-4 py-2 text-sm text-[#c3b3c6] cursor-not-allowed'
-            >
-              Prev
-            </button>
-            <button type='button' className='rounded-full bg-[var(--brand-700)] px-4 py-2 text-sm font-semibold text-white'>
-              1
-            </button>
-            <button
-              type='button'
-              className='rounded-full border border-[#e9d8f0] bg-white px-4 py-2 text-sm text-[#5f4b6e] transition hover:border-[#d7bfdc] hover:bg-[#faf2ff] cursor-pointer'
-            >
-              2
-            </button>
-            <button
-              type='button'
-              className='rounded-full border border-[#e9d8f0] bg-white px-4 py-2 text-sm text-[#5f4b6e] transition hover:border-[#d7bfdc] hover:bg-[#faf2ff] cursor-pointer'
-            >
-              3
-            </button>
-            <span className='px-1 text-sm text-[#a596a3]'>…</span>
-            <button
-              type='button'
-              className='rounded-full border border-[#e9d8f0] bg-white px-4 py-2 text-sm text-[#5f4b6e] transition hover:border-[#d7bfdc] hover:bg-[#faf2ff] cursor-pointer'
-            >
-              156
-            </button>
-            <button
-              type='button'
-              className='rounded-full border border-[#e9d8f0] bg-white px-4 py-2 text-sm text-[#5f4b6e] transition hover:border-[#d7bfdc] hover:bg-[#faf2ff] cursor-pointer'
-            >
-              Next
-            </button>
-          </div>
-
-          <label className='flex items-center gap-2 text-sm text-[#7e6d83]'>
-            Rows per page:
-            <span className='relative'>
-              <select
-                defaultValue='10'
-                aria-label='Rows per page'
-                className='appearance-none rounded-lg border border-[#e9d8f0] bg-white py-1.5 pl-3 pr-8 text-sm font-medium text-[#5f4b6e] outline-none cursor-pointer'
-              >
-                {rowsPerPageOptions.map((option) => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-              <FiChevronDown className='pointer-events-none absolute right-2.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-[#7d6a83]' />
-            </span>
-          </label>
-        </div>
-      </div>
+      <PaginatedDataTable
+        columns={columns}
+        rows={stockHistory}
+        rowKey={(item) => item.reference}
+        minWidthClassName='min-w-[72rem]'
+        pageSize={10}
+        itemLabel='entries'
+      />
     </PageLayout>
   )
 }
