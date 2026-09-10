@@ -1,4 +1,4 @@
-import { FaRegStar } from 'react-icons/fa'
+import { FaRegStar, FaStar  } from 'react-icons/fa'
 import { FiCheck, FiSearch, FiTrash2, FiX } from 'react-icons/fi'
 
 const cardClass =
@@ -69,7 +69,7 @@ function StarRating({ rating }) {
   return (
     <div className='flex items-center gap-0.5'>
       {Array.from({ length: 5 }).map((_, index) => (
-        <FaRegStar key={index} className={`h-3.5 w-3.5 text-[#E8C87A] ${index < rating ? '' : 'opacity-25'}`} />
+        <FaStar key={index} className={`h-3.5 w-3.5 text-[#E8C87A] ${index < rating ? '' : 'opacity-25'}`} />
       ))}
     </div>
   )
@@ -153,7 +153,7 @@ function ReviewsPage() {
                   </td>
                   <td className='border-t border-[#f1e5f2] px-4 py-3 text-sm text-[#6e5a6e] sm:px-5'>{item.product}</td>
                   <td className='border-t border-[#f1e5f2] px-4 py-3 sm:px-5'>
-                    <StarRating rating={item.rating} />
+                    <StarRating className='' rating={item.rating} />
                   </td>
                   <td className='border-t border-[#f1e5f2] px-4 py-3 text-sm text-[#6e5a6e] sm:px-5'>{item.review}</td>
                   <td className='border-t border-[#f1e5f2] px-4 py-3 text-sm text-[#9d8fa3] sm:px-5'>{item.date}</td>
