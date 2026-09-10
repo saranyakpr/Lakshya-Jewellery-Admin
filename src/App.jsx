@@ -22,6 +22,7 @@ import StockHistoryPage from './pages/StockHistoryPage'
 import AllOrdersPage from './pages/AllOrdersPage'
 import ReturnsRefundsPage from './pages/ReturnsRefundsPage'
 import ShippingTrackingPage from './pages/ShippingTrackingPage'
+import StaffRolesPage from './pages/StaffRolesPage'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -63,6 +64,7 @@ function App() {
             <Route path='/orders/all-orders' element={<AllOrdersPage />} />
             <Route path='/orders/returns-refunds' element={<ReturnsRefundsPage />} />
             <Route path='/orders/shipping-tracking' element={<ShippingTrackingPage />} />
+            <Route path='/staff-roles' element={<StaffRolesPage />} />
             <Route path='/products/:productId' element={<ProductDetailPage />} />
             {menuRoutes
               .filter(
@@ -81,7 +83,8 @@ function App() {
                   route.path !== '/inventory/stock-history' &&
                   route.path !== '/orders/all-orders' &&
                   route.path !== '/orders/returns-refunds' &&
-                  route.path !== '/orders/shipping-tracking',
+                  route.path !== '/orders/shipping-tracking' &&
+                  route.path !== '/staff-roles',
               )
               .map((route) => (
                 <Route
