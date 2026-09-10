@@ -1,5 +1,5 @@
 const inputClass =
-  'w-full rounded-lg border border-[#e8dfe8] bg-[#f7f2f6] px-4 py-3 text-sm text-[#312533] outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff]'
+  'w-full rounded-lg border border-[#e8dfe8] bg-[#f7f2f6] px-3 py-2 !text-sm !text-[#312533] mt-1 !outline-none transition focus:border-[#b78cd2] focus:ring-2 focus:ring-[#e9d4ff]'
 
 function FieldLabel({ label, required }) {
   return (
@@ -10,14 +10,14 @@ function FieldLabel({ label, required }) {
   )
 }
 
-export function FormSection({ title, children, className = '' }) {
+export function FormSection({ title, children, className = '', contentClassName = 'grid gap-4 sm:grid-cols-2' }) {
   return (
     <section className={`rounded-2xl border border-[#efe3ed] bg-white p-6 shadow-[0_8px_30px_rgba(77,37,74,0.06)] ${className}`}>
       <h3 className='mb-5 flex items-center gap-2 text-base font-bold text-[#241a2c]'>
         <span className='h-4 w-1 shrink-0 rounded-full bg-[#7c21a0]' />
         {title}
       </h3>
-      <div className='grid gap-4 sm:grid-cols-2'>{children}</div>
+      <div className={contentClassName}>{children}</div>
     </section>
   )
 }

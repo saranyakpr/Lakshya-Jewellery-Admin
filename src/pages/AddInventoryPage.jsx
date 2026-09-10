@@ -13,7 +13,7 @@ function AddInventoryPage() {
 
   return (
     <div className='flex flex-col gap-4'>
-      <nav className='text-sm text-[#9d8fa3]'>
+      {/* <nav className='text-sm text-[#9d8fa3]'>
         <button
           type='button'
           onClick={() => navigate('/inventory/stock-management')}
@@ -23,7 +23,7 @@ function AddInventoryPage() {
         </button>
         <span className='mx-2'>/</span>
         <span className='font-semibold text-[#7c21a0]'>Add Inventory</span>
-      </nav>
+      </nav> */}
 
       <div className='flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between'>
         <div>
@@ -106,7 +106,7 @@ function AddInventoryPage() {
                 key={metal}
                 type='button'
                 onClick={() => setMetalType(metal)}
-                className={`rounded-lg px-4 py-2.5 text-sm font-semibold transition cursor-pointer ${
+                className={`rounded-lg px-5 py-2 !text-sm font-semibold transition cursor-pointer ${
                   metalType === metal
                     ? 'bg-[#7c21a0] text-white shadow-[0_10px_24px_rgba(124,33,160,0.24)]'
                     : 'border border-[#e8dfe8] bg-white text-[#5a4b63] hover:border-[#b78cd2] hover:bg-[#faf4ff]'
